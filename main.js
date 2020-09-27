@@ -19,3 +19,56 @@ classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/p
 function modelLoaded(){
     console.log("modelLoaded")
 }
+
+function check() {
+    img=document.getElementById("captured_image");
+    classifier.classify(img,gotResult);
+
+}
+function gotResult(error,results){
+    if(error){
+        console.error(error);
+    }else{
+        console.log(results);
+        document.getElementById("result_emotion_name").innerHTML=results[0].label;
+        document.getElementById("result_emotion_name_two").innerHTML=results[1].label;
+        if(results[0].label=="happy"){
+            document.getElementById("result_emoji_name").innerHTML="&#128512";
+        }
+        if(results[0].label=="angry"){
+            document.getElementById("result_emoji_name").innerHTML="&#128545";
+        }
+        if(results[0].label=="annoyed"){
+            document.getElementById("result_emoji_name").innerHTML="&#128548";
+        }
+        if(results[0].label=="good"){
+            document.getElementById("result_emoji_name").innerHTML="&#128522";
+        }
+        if(results[0].label=="crying"){
+            document.getElementById("result_emoji_name").innerHTML="&#128546";
+        }
+        if(results[0].label=="sad"){
+            document.getElementById("result_emoji_name").innerHTML="&#128532";
+        }
+        
+
+        if(results[1].label=="happy"){
+            document.getElementById("result_emoji_name_two").innerHTML="&#128512";
+        }
+        if(results[1].label=="angry"){
+            document.getElementById("result_emoji_name_two").innerHTML="&#128545";
+        }
+        if(results[1].label=="annoyed"){
+            document.getElementById("result_emoji_name_two").innerHTML="&#128548";
+        }
+        if(results[1].label=="good"){
+            document.getElementById("result_emoji_name_two").innerHTML="&#128522";
+        }
+        if(results[1].label=="crying"){
+            document.getElementById("result_emoji_name_two").innerHTML="&#128546";
+        }
+        if(results[1].label=="sad"){
+            document.getElementById("result_emoji_name_two").innerHTML="&#128532";
+        }
+    }
+    }

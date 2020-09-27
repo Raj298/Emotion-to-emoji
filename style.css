@@ -13,7 +13,7 @@ span
   width: 350px;
   height: 300px; 
 }
-#result_emotion_name ,#result_emotion_name2  
+#result_emotion_name ,#result_emotion_name_two
 {
   color: black;
 }
@@ -21,7 +21,7 @@ span
 {
   font-size: 40px;
 }
-.emoji
+.emoji_name
 {
   font-size:48px;
 }
